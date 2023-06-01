@@ -1,0 +1,13 @@
+resource "aws_instance" "insta" {
+ami = "ami-05842f1afbf311a43"
+instance_type = "t2.micro"
+key_name = "Ohio-key"
+vpc_security_group_ids = ["${aws_security_group.sg1.id}"]
+subnet_id = "${aws_subnet.sub1.id}"
+associate_public_ip_address = "true"
+tags = {
+Name = "my-insta-1"
+}
+}
+
+
